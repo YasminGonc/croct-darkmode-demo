@@ -1,7 +1,7 @@
 'use client';
 
 import {ReactNode, useState} from 'react';
-import {useCroct} from '@croct/plug-react';
+import {useCroct} from '@croct/plug-next';
 
 type PrivacyBannerProps = {
     granted: boolean,

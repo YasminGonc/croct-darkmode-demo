@@ -1,5 +1,5 @@
 import {ReactElement} from 'react';
-import {cql} from '@/lib/utils/evaluate';
+import {cql} from '@croct/plug-next/server';
 import {PrivacyBanner} from '@/components/PrivacyBanner';
 
 export default async function PrivacyNotice(): Promise<ReactElement> {

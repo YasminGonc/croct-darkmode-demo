@@ -1,6 +1,6 @@
-import React, {Fragment, ReactElement} from 'react';
+import React, {Fragment, ReactElement, Suspense} from 'react';
+import {fetchContent} from '@croct/plug-next/server';
 import PricingSection from '@/components/PricingSection';
-import {fetchContent} from '@/lib/utils/fetchContent';
 import PrivacyNotice from '@/components/PrivacyNotice';
 
 /**
@@ -25,7 +25,9 @@ export default async function PricingPage(): Promise<ReactElement> {
     return (
         <Fragment>
             <PricingSection {...content} />
-            <PrivacyNotice />
+            <Suspense>
+                <PrivacyNotice />
+            </Suspense>
         </Fragment>
     );
 }

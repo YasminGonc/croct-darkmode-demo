@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import {Inter} from 'next/font/google';
 import '@/app/globals.css';
 import classNames from 'classnames';
-import Providers from '@/components/Providers';
+import {CroctProvider} from '@croct/plug-next/CroctProvider';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -20,9 +20,9 @@ export default function RootLayout({children}: RootLayoutProps): ReactNode {
     return (
         <html lang="en" className="h-full">
             <body className={classNames('h-full', inter)}>
-                <Providers>
+                <CroctProvider debug>
                     {children}
-                </Providers>
+                </CroctProvider>
             </body>
         </html>
     );

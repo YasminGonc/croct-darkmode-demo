@@ -4,7 +4,7 @@ import {ReactElement, useState} from 'react';
 import {RadioGroup} from '@headlessui/react';
 import {CheckIcon} from '@heroicons/react/20/solid';
 import classNames from 'classnames';
-import {useCroct} from '@croct/plug-react';
+import {useCroct} from '@croct/plug-next';
 
 type BillingFrequency = 'monthly' | 'annually';
 
