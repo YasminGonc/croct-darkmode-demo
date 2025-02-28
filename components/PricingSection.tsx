@@ -40,12 +40,35 @@ export type PricingSectionProps = {
     preTitle: string,
     title: string,
     subtitle: string,
-    defaultFrequency?: BillingFrequency,
-    plans: Plans[],
+    defaultFrequency?: BillingFrequency
 };
 
 export default function PricingSection(props: PricingSectionProps): ReactElement {
-    const {plans, preTitle, title, defaultFrequency} = props;
+    const {preTitle, title, subtitle, defaultFrequency} = props;
+    const plans: Plans = [
+        {
+            name: 'Freelancer',
+            link: 'http://localhost:3000/checkout/freelancer',
+            price: {
+                monthly: '15',
+                annually: '144'
+            },
+            description: 'The essentials to provide your best work for clients.',
+            features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
+            mostPopular: true
+        },
+        {
+            name: 'Startup',
+            link: 'http://localhost:3000/checkout/freelancer',
+            price: {
+                monthly: '30',
+                annually: '288'
+            },
+            description: 'A plan that scales with your rapidly growing business.',
+            features: ['25 products', 'Up to 1,000 subscribers', 'Advanced analytics', '24-hour support response time', 'Marketing automations'],
+            mostPopular: false
+        }
+    ];
     const croct = useCroct();
     const [frequency, setFrequency] = useState(
         () => frequencies.find(
@@ -63,7 +86,7 @@ export default function PricingSection(props: PricingSectionProps): ReactElement
                     </p>
                 </div>
                 <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
-                    {props.subtitle}
+                    {subtitle}
                 </p>
                 <div className="mt-16 flex justify-center">
                     <RadioGroup
